@@ -16,7 +16,7 @@ with dag:
 
     bq_query_execute = airflow.providers.google.cloud.operators.bigquery.BigQueryExecuteQueryOperator (
                             task_id = 'bq_query_execute',
-                            sql = 'SELECT * FROM `composer-templates-dev.hmh_demo.covid` WHERE case_reported_date = "2021-08-18"',
+                            sql = 'SELECT * FROM `devansh-365318.airflow_demo.covid` WHERE case_reported_date = "2021-08-18"',
                             use_legacy_sql = False,
                             write_disposition = 'WRITE_TRUNCATE',
                             allow_large_results = True,
@@ -26,7 +26,7 @@ with dag:
     export_to_gcs = airflow.providers.google.cloud.transfers.bigquery_to_gcs.BigQueryToGCSOperator (
                             task_id = 'export_to_gcs',
                             source_project_dataset_table = 'composer-templates-dev.hmh_demo.tmp_covid',
-                            destination_cloud_storage_uris = 'gs://hmh_composer_demo/export_files/covid.csv',
+                            destination_cloud_storage_uris = 'gs://composer-gcs-to-bq-demo/export_files/covid.csv',
                             export_format = 'CSV',
                             field_delimiter = ',',
                             print_header = True,

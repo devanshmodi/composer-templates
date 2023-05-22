@@ -15,13 +15,13 @@ with dag:
 
     dataflow_submit_classic_template_job = airflow.providers.google.cloud.operators.dataflow.DataflowTemplatedJobStartOperator (
                             task_id = 'dataflow_submit_classic_template_job',
-                            project_id = 'project-id',
+                            project_id = 'devansh-365318',
                             location = 'us-central1',
                             job_name = 'bigquery_to_cloud_storage',
                             append_job_name = True,
                             template = 'gs://dataflow-templates/latest/Cloud_BigQuery_to_GCS_TensorFlow_Records',
-                            options = {'serviceAccountEmail': '1234-compute@developer.gserviceaccount.com', 'tempLocation': 'gs://bucket/temp', 'ipConfiguration': 'WORKER_IP_PRIVATE'},
-                            parameters = {'readQuery': 'select * from project_id.dataset.table', 'outputDirectory': 'gs://bucket/output'},
+                            options = {'serviceAccountEmail': '651244674525-compute@developer.gserviceaccount.com', 'tempLocation': 'gs://bucket/temp', 'ipConfiguration': 'WORKER_IP_PRIVATE'},
+                            parameters = {'readQuery': 'select * from devansh-365318.airflow_demo.covid limit 100', 'outputDirectory': 'gs://composer-gcs-to-bq-demo/dataflow_output'},
                             poll_sleep = 200,
                             cancel_timeout = 200,
                             wait_until_finished = True,

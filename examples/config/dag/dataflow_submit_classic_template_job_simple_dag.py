@@ -20,7 +20,7 @@ with dag:
                             job_name = 'bigquery_to_cloud_storage',
                             append_job_name = True,
                             template = 'gs://dataflow-templates/latest/Cloud_BigQuery_to_GCS_TensorFlow_Records',
-                            options = {'serviceAccountEmail': '651244674525-compute@developer.gserviceaccount.com', 'tempLocation': 'gs://bucket/temp', 'ipConfiguration': 'WORKER_IP_PRIVATE'},
+                            options = {'serviceAccountEmail': '651244674525-compute@developer.gserviceaccount.com', 'tempLocation': 'gs://composer-gcs-to-bq-demo/temp', 'ipConfiguration': 'WORKER_IP_PRIVATE'},
                             parameters = {'readQuery': 'select * from devansh-365318.airflow_demo.covid limit 100', 'outputDirectory': 'gs://composer-gcs-to-bq-demo/dataflow_output'},
                             poll_sleep = 200,
                             cancel_timeout = 200,

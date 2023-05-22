@@ -20,7 +20,7 @@ with dag:
                             use_legacy_sql = False,
                             write_disposition = 'WRITE_TRUNCATE',
                             allow_large_results = True,
-                            destination_dataset_table = 'composer-templates-shared.hmh_demo.tmp_covid',
+                            destination_dataset_table = 'devansh-365318.airflow_demo.tmp_covid',
                             trigger_rule='none_failed')
 
     export_to_gcs = airflow.providers.google.cloud.transfers.bigquery_to_gcs.BigQueryToGCSOperator (

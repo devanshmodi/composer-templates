@@ -25,7 +25,7 @@ with dag:
 
     export_to_gcs = airflow.providers.google.cloud.transfers.bigquery_to_gcs.BigQueryToGCSOperator (
                             task_id = 'export_to_gcs',
-                            source_project_dataset_table = 'composer-templates-dev.hmh_demo.tmp_covid',
+                            source_project_dataset_table = 'devansh-365318.airflow_demo.tmp_covid',
                             destination_cloud_storage_uris = 'gs://composer-gcs-to-bq-demo/export_files/covid.csv',
                             export_format = 'CSV',
                             field_delimiter = ',',

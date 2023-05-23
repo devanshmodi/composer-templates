@@ -7,7 +7,7 @@ from airflow.providers.google.cloud.transfers.bigquery_to_gcs import BigQueryToG
 
 dag = DAG(
     dag_id='bq_to_gcs_simple_dag',
-    schedule_interval='@hourly',
+    schedule_interval='@once',
     start_date=airflow.utils.dates.days_ago(0)
 )
 
